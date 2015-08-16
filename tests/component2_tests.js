@@ -1,7 +1,7 @@
 describe("component2 tests suite.", function() {
     beforeEach(function() {
         this._contentHolder = document.createElement("div");
-        this._contentHolder.appendChild(document.createElement("rc-helloworld2"));
+        this._contentHolder.innerHTML = "<rc-helloworld2></rc-helloworld2>";
 
         document.body.appendChild(this._contentHolder);
     });
@@ -11,8 +11,7 @@ describe("component2 tests suite.", function() {
     });
 
     it("Check component instantiation.", function(done) {
-        var self = this,
-            comp = self._contentHolder.querySelector("rc-helloworld2");
+        var comp = this._contentHolder.querySelector("rc-helloworld2");
 
         expect(comp.customAttr).toBe("default value");
 

@@ -1,7 +1,7 @@
 describe("helloword polymer unittests.", function() {
     beforeEach(function() {
         this._contentHolder = document.createElement("div");
-        this._contentHolder.appendChild(document.createElement("rc-helloworld"));
+        this._contentHolder.innerHTML = "<rc-helloworld></rc-helloworld>";
 
         document.body.appendChild(this._contentHolder);
     });
