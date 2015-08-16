@@ -2,12 +2,21 @@
 
 <dom-module id="rc-helloworld">
     <template>
-        <p>Works as expected.</p>
+        <p>{{msg}}</p>
     </template>
 
     <script>
     var comp = {
-        is: "rc-helloworld"
+        is: "rc-helloworld",
+        properties: {
+            msg: {
+                type: "String",
+                value: "Hello world ..."
+            }
+        },
+        greet: function(msg) {
+            this.msg = msg;
+        }
     };
 
     Polymer(comp);
