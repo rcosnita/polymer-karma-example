@@ -5,17 +5,6 @@ module.exports = function(config) {
         files: [
             "src/*.js",
             "tests/*.js"
-        ],
-
-        reporters: ["coverage"],
-
-        preprocessors: {
-            "src/**/*.js": ["coverage"]
-        },
-
-        coverageReporter: {
-            type: "cobertura",
-            dir: "coverage/"
-        }
+        ]
     });
 };

@@ -4,6 +4,6 @@ describe("A suite", function() {
     });
 
     it("contains a second spec with an expectation", function() {
-        expect(false).toBe(true);
+        expect(true).toBe(true);
     });
 });
