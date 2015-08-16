@@ -1,6 +1,18 @@
 describe("helloword polymer unittests.", function() {
-    it("check default msg value.", function() {
-        var comp = document.createElement("rc-helloworld"),
+    beforeEach(function() {
+        this._contentHolder = document.createElement("div");
+        this._contentHolder.appendChild(document.createElement("rc-helloworld"));
+
+        document.body.appendChild(this._contentHolder);
+    });
+
+    afterEach(function() {
+        document.body.removeChild(this._contentHolder);
+    });
+
+    it("check default msg value.", function(done) {
+        var self = this,
+                comp = self._contentHolder.querySelector("rc-helloworld"),
                 expectedMsg = "Hello world ...";
 
         expect(comp.msg).toBe(expectedMsg);
@@ -14,5 +26,7 @@ describe("helloword polymer unittests.", function() {
         comp.greet("Message changed ...");
         expect(comp.msg).toBe("Message changed ...");
         expect(content.innerText).toBe("Message changed ...");
+
+        done();
     });
 });

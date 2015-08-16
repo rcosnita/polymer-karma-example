@@ -1,6 +1,6 @@
 module.exports = function(config) {
     var configuration = {
-        browsers: ["Chrome", "Firefox" /*, "OperaClassic"*/ ],
+        browsers: ["Chrome", /*"Firefox" /*, "OperaClassic"*/ ],
 
         customLaunchers: {
             Chrome_travis_ci: {
@@ -11,13 +11,14 @@ module.exports = function(config) {
 
         frameworks: ["jasmine"],
 
-        files: [{
+        files: [
+            "lib/webcomponentsjs/webcomponents.min.js",
+            {
                 pattern: "lib/**",
                 included: false,
                 served: true,
                 watched: true
             },
-            "lib/webcomponentsjs/webcomponents.min.js",
             "src/*.html",
             "src/*.js",
             "tests/*.js"
