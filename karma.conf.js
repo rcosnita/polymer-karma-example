@@ -9,7 +9,7 @@ module.exports = function(config) {
                 served: true,
                 watched: true
             },
-            "lib/webcomponentsjs/webcomponents.js",
+            "lib/webcomponentsjs/webcomponents.min.js",
             "src/*.html",
             "src/*.js",
             "tests/*.js"

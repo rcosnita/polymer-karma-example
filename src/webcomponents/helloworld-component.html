@@ -1,0 +1,24 @@
+<link rel="import"  href="../../lib/polymer/polymer.html">
+
+<dom-module id="rc-helloworld">
+    <template>
+        <p>{{msg}}</p>
+    </template>
+
+    <script>
+    var comp = {
+        is: "rc-helloworld",
+        properties: {
+            msg: {
+                type: "String",
+                value: "Hello world ..."
+            }
+        },
+        greet: function(msg) {
+            this.msg = msg;
+        }
+    };
+
+    Polymer(comp);
+    </script>
+</dom-module>
