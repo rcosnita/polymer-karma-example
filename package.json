@@ -1,0 +1,11 @@
+{
+    "name": "simple-jasmine-karma-test",
+    "description": "This is a very simple test for understanding how to configure jasmine + karma runner.",
+    "version": "0.0.1",
+    "devDependencies": {
+        "jasmine-core": "^2.3.4",
+        "karma": "^0.13.9",
+        "karma-jasmine": "^0.3.6",
+        "karma-coverage": "^0.5.0"
+    }
+}

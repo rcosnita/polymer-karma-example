@@ -1,0 +1,17 @@
+{
+    "folders":
+    [
+        {
+            "path": "."
+        }
+    ],
+    "build_systems": [
+        {
+            "name": "run tests",
+            "cmd": "node node_modules/.bin/karma run",
+            "shell": true,
+            "selector": "source.js",
+            "working_dir": "${project_path:${folder}}"
+        }
+    ]
+}
