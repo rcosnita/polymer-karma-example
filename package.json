@@ -12,6 +12,6 @@
         "karma-opera-launcher": "^0.3.0 "
     },
     "scripts": {
-        "test": "./node_modules/.bin/karma start --browsers Chrome,Firefox --single-run"
+        "test": "./node_modules/.bin/karma start karma.conf.js --single-run"
     }
 }
