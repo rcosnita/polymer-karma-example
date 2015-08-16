@@ -5,20 +5,9 @@
         <p>{{msg}}</p>
     </template>
 
-    <script>
-    var comp = {
-        is: "rc-helloworld",
-        properties: {
-            msg: {
-                type: "String",
-                value: "Hello world ..."
-            }
-        },
-        greet: function(msg) {
-            this.msg = msg;
-        }
-    };
+    <script src="helloworld-component.js"></script>
 
+    <script>
     Polymer(comp);
     </script>
 </dom-module>
