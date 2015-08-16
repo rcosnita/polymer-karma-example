@@ -11,10 +11,12 @@ describe("component2 tests suite.", function() {
     });
 
     it("Check component instantiation.", function(done) {
-        var comp = this._contentHolder.querySelector("rc-helloworld2");
+        var self = this;
 
-        expect(comp.customAttr).toBe("default value");
-
-        done();
+        TestsHelper.execWhenReady(function() {
+                return self._contentHolder.querySelector("rc-helloworld2");
+            }, function(comp) {
+                expect(comp.customAttr).toBe("default value");
+            }, done);
     });
 });

@@ -11,22 +11,24 @@ describe("helloword polymer unittests.", function() {
     });
 
     it("check default msg value.", function(done) {
-        var self = this,
-                comp = self._contentHolder.querySelector("rc-helloworld"),
-                expectedMsg = "Hello world ...";
+        var self = this;
 
-        expect(comp.msg).toBe(expectedMsg);
-        expect(comp.greet).not.toBe(undefined);
+        TestsHelper.execWhenReady(function() {
+                return self._contentHolder.querySelector("rc-helloworld");
+            }, function(comp) {
+                var expectedMsg = "Hello world ...";
 
-        var content = comp.querySelector("p");
+                expect(comp.msg).toBe(expectedMsg);
+                expect(comp.greet).not.toBe(undefined);
 
-        expect(content).not.toBe(undefined);
-        expect(content.innerText).toBe(expectedMsg);
+                var content = comp.querySelector("p");
 
-        comp.greet("Message changed ...");
-        expect(comp.msg).toBe("Message changed ...");
-        expect(content.innerText).toBe("Message changed ...");
+                expect(content).not.toBe(undefined);
+                expect(content.textContent).toBe(expectedMsg);
 
-        done();
+                comp.greet("Message changed ...");
+                expect(comp.msg).toBe("Message changed ...");
+                expect(content.textContent).toBe("Message changed ...");
+            }, done);
     });
 });
