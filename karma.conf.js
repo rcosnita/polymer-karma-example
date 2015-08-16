@@ -1,6 +1,13 @@
 module.exports = function(config) {
-    config.set({
-        browsers : ["Chrome", "Firefox", "OperaClassic"],
+    var configuration = {
+        browsers: ["Chrome", "Firefox" /*, "OperaClassic"*/ ],
+
+        customLaunchers: {
+            Chrome_travis_ci: {
+                base: "Chrome",
+                flags: ["--no-sandbox"]
+            }
+        },
 
         frameworks: ["jasmine"],
 
@@ -26,5 +33,11 @@ module.exports = function(config) {
             type: "html",
             dir: "coverage/"
         }
-    });
+    };
+
+    if(process.env.TRAVIS){
+        configuration.browsers = ["Chrome_travis_ci", "Firefox"];
+    }
+
+    config.set(configuration);    
 };
