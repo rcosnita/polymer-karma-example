@@ -2,9 +2,8 @@ module.exports = function(config) {
     config.set({
         frameworks: ["jasmine"],
 
-        files: [
-            {
-                pattern: 'lib/**',
+        files: [{
+                pattern: "lib/**",
                 included: false,
                 served: true,
                 watched: true
@@ -13,6 +12,17 @@ module.exports = function(config) {
             "src/*.html",
             "src/*.js",
             "tests/*.js"
-        ]
+        ],
+
+        reporters: ["progress", "coverage"],
+
+        preprocessors: {
+            "src/**/*.js": ["coverage"]
+        },
+
+        coverageReporter: {
+            type: "cobertura",
+            dir: "coverage/"
+        }
     });
 };
