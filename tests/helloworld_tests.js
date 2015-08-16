@@ -12,6 +12,7 @@ describe("helloword polymer unittests.", function() {
         expect(content.innerText).toBe(expectedMsg);
 
         comp.greet("Message changed ...");
+        expect(comp.msg).toBe("Message changed ...");
         expect(content.innerText).toBe("Message changed ...");
     });
 });
